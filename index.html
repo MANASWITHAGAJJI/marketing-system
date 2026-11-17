@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A frontend marketing automation dashboard demo.">
+  <title>Market Auto | Marketing Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard"><span class="brand-mark">M</span><span>market<span class="brand-light">auto</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="nav-link active" href="#dashboard"><span>▦</span> Dashboard</a>
+        <a class="nav-link" href="#campaigns"><span>◉</span> Campaigns</a>
+        <a class="nav-link" href="#templates"><span>▤</span> Email templates</a>
+        <a class="nav-link" href="#subscribers"><span>♙</span> Subscribers</a>
+        <a class="nav-link" href="#analytics"><span>▥</span> Analytics</a>
+        <a class="nav-link" href="#workflows"><span>⟳</span> Automations</a>
+        <a class="nav-link" href="#landing"><span>▧</span> Landing pages</a>
+        <a class="nav-link" href="#reports"><span>▣</span> Reports</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">?</div><strong>Need a hand?</strong><p>Visit the help center for tips and guides.</p><button class="text-button" id="helpBtn">Get help →</button></div>
+        <div class="profile-mini"><div class="avatar">MG</div><div><strong>Manaswitha Gajji</strong><small>Administrator</small></div><span class="dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumbs">Workspace <span>/</span> <strong id="currentPage">Dashboard</strong></div>
+        <div class="top-actions"><span class="date-label" id="todayLabel"></span><button class="icon-button" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button><button class="avatar top-avatar" title="Profile">MG</button></div>
+      </header>
+
+      <section class="page-section" id="dashboard">
+        <div class="welcome-row"><div><p class="eyebrow">OVERVIEW</p><h1>Good morning, Manaswitha <span>✦</span></h1><p class="muted">Here's what's happening with your marketing today.</p></div><button class="primary-btn" data-open-campaign>＋ Create campaign</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total campaigns</span><span class="stat-icon red">◉</span></div><strong id="statCampaigns">12</strong><small class="positive">↑ 12.8% <span>vs last month</span></small><div class="sparkline">▁▃▂▅▄▆▅█</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Total subscribers</span><span class="stat-icon purple">♙</span></div><strong id="statSubscribers">8,549</strong><small class="positive">↑ 8.2% <span>vs last month</span></small><div class="sparkline purple-line">▂▃▃▄▅▄▆█</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Avg. open rate</span><span class="stat-icon orange">✉</span></div><strong>42.8%</strong><small class="positive">↑ 4.3% <span>vs last month</span></small><div class="sparkline orange-line">▁▂▄▃▅▆▅█</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Revenue generated</span><span class="stat-icon green">$</span></div><strong>$24,580</strong><small class="positive">↑ 16.4% <span>vs last month</span></small><div class="sparkline green-line">▂▁▃▄▃▆▇█</div></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel performance-panel"><div class="panel-heading"><div><h2>Campaign performance</h2><p class="muted">Engagement overview across your campaigns</p></div><select id="chartPeriod" aria-label="Chart period"><option>Last 7 days</option><option>Last 30 days</option><option>Last 90 days</option></select></div><div class="chart-legend"><span><i class="legend-dot red-dot"></i> Opens</span><span><i class="legend-dot pale-dot"></i> Clicks</span></div><div class="chart-area"><div class="y-labels"><span>5k</span><span>4k</span><span>3k</span><span>2k</span><span>1k</span><span>0</span></div><div class="chart" aria-label="Sample campaign performance chart"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 620 210" preserveAspectRatio="none" role="img" aria-label="Opens and clicks trend line"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#dc2626" stop-opacity=".18"/><stop offset="1" stop-color="#dc2626" stop-opacity="0"/></linearGradient></defs><path d="M0 155 C45 145 48 110 95 122 S150 155 190 105 S250 110 285 83 S340 110 380 72 S435 90 475 55 S540 78 620 25 L620 210 L0 210Z" fill="url(#areaFill)"/><path d="M0 155 C45 145 48 110 95 122 S150 155 190 105 S250 110 285 83 S340 110 380 72 S435 90 475 55 S540 78 620 25" fill="none" stroke="#dc2626" stroke-width="3" vector-effect="non-scaling-stroke"/><path d="M0 185 C45 178 48 160 95 168 S150 185 190 150 S250 160 285 140 S340 158 380 130 S435 150 475 115 S540 135 620 95" fill="none" stroke="#f6a4a4" stroke-width="3" vector-effect="non-scaling-stroke"/></svg><div class="x-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></div></article>
+          <article class="panel audience-panel"><div class="panel-heading"><div><h2>Audience overview</h2><p class="muted">Your subscriber breakdown</p></div><button class="more-btn" aria-label="More options">•••</button></div><div class="donut-wrap"><div class="donut"><div><strong>8,549</strong><small>Total</small></div></div></div><div class="audience-legend"><div><span><i class="legend-dot red-dot"></i> Active</span><strong>6,412 <small>75%</small></strong></div><div><span><i class="legend-dot pale-dot"></i> Inactive</span><strong>1,282 <small>15%</small></strong></div><div><span><i class="legend-dot gray-dot"></i> Unsubscribed</span><strong>855 <small>10%</small></strong></div></div></article>
+        </div>
+        <article class="panel table-panel"><div class="panel-heading"><div><h2>Recent campaigns</h2><p class="muted">Keep track of your latest campaign activity</p></div><a class="view-link" href="#campaigns">View all campaigns →</a></div><div class="table-scroll"><table><thead><tr><th>CAMPAIGN</th><th>TYPE</th><th>STATUS</th><th>OPEN RATE</th><th>CLICK RATE</th><th>DATE</th></tr></thead><tbody id="recentCampaignRows"></tbody></table></div></article>
+      </section>
+
+      <section class="page-section" id="campaigns" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">MARKETING</p><h1>Campaigns</h1><p class="muted">Create, manage and monitor your email campaigns.</p></div><button class="primary-btn" data-open-campaign>＋ Create campaign</button></div>
+        <div class="toolbar"><input id="campaignSearch" type="search" placeholder="⌕  Search campaigns..." aria-label="Search campaigns"><select id="campaignFilter" aria-label="Filter campaigns"><option value="all">All statuses</option><option value="Draft">Draft</option><option value="Scheduled">Scheduled</option><option value="In Progress">In Progress</option><option value="Completed">Completed</option><option value="Cancelled">Cancelled</option></select></div>
+        <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>CAMPAIGN</th><th>TYPE</th><th>AUDIENCE</th><th>STATUS</th><th>OPEN RATE</th><th>CLICK RATE</th><th>DATE</th><th>ACTIONS</th></tr></thead><tbody id="campaignRows"></tbody></table></div><div class="empty-state" id="campaignEmpty" hidden>No campaigns match your search.</div></article>
+      </section>
+
+      <section class="page-section" id="templates" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">CONTENT</p><h1>Email templates</h1><p class="muted">Reusable designs for consistent communication.</p></div><button class="primary-btn" id="newTemplateBtn">＋ New template</button></div>
+        <div class="template-grid" id="templateGrid"></div>
+      </section>
+
+      <section class="page-section" id="subscribers" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">AUDIENCE</p><h1>Subscribers</h1><p class="muted">Manage your contacts and audience segments.</p></div><button class="primary-btn" id="addSubscriberBtn">＋ Add subscriber</button></div>
+        <div class="stats-grid compact-stats"><article class="stat-card"><span class="muted">All subscribers</span><strong id="subscriberTotal">0</strong></article><article class="stat-card"><span class="muted">Active</span><strong id="subscriberActive">0</strong></article><article class="stat-card"><span class="muted">Unsubscribed</span><strong id="subscriberUnsub">0</strong></article></div>
+        <div class="toolbar"><input id="subscriberSearch" type="search" placeholder="⌕  Search name or email..." aria-label="Search subscribers"><select id="subscriberFilter" aria-label="Filter subscribers"><option value="all">All subscribers</option><option value="Active">Active</option><option value="Inactive">Inactive</option><option value="Unsubscribed">Unsubscribed</option></select><button class="secondary-btn" id="exportSubscribers">↓ Export CSV</button></div>
+        <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>NAME</th><th>EMAIL</th><th>STATUS</th><th>SUBSCRIBED</th><th>ACTIONS</th></tr></thead><tbody id="subscriberRows"></tbody></table></div><div class="empty-state" id="subscriberEmpty" hidden>No subscribers found.</div></article>
+      </section>
+
+      <section class="page-section" id="analytics" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">INSIGHTS</p><h1>Campaign analytics</h1><p class="muted">Understand how your audience engages with your content.</p></div><button class="secondary-btn" id="exportAnalytics">↓ Export report</button></div>
+        <div class="stats-grid"><article class="stat-card"><span class="muted">Average open rate</span><strong>42.8%</strong><small class="positive">↑ 4.3% this month</small></article><article class="stat-card"><span class="muted">Average click rate</span><strong>12.6%</strong><small class="positive">↑ 2.1% this month</small></article><article class="stat-card"><span class="muted">Bounce rate</span><strong>1.8%</strong><small class="negative">↓ 0.4% this month</small></article><article class="stat-card"><span class="muted">Conversions</span><strong>326</strong><small class="positive">↑ 11.5% this month</small></article></div>
+        <article class="panel table-panel"><div class="panel-heading"><div><h2>Performance by campaign</h2><p class="muted">Metrics shown are sample demo data.</p></div></div><div class="table-scroll"><table><thead><tr><th>CAMPAIGN</th><th>DELIVERED</th><th>OPEN RATE</th><th>CLICK RATE</th><th>BOUNCE RATE</th><th>CONVERSIONS</th></tr></thead><tbody id="analyticsRows"></tbody></table></div></article>
+      </section>
+
+      <section class="page-section" id="workflows" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">AUTOMATION</p><h1>Workflows</h1><p class="muted">Build automated journeys for your subscribers.</p></div><button class="primary-btn" id="newWorkflowBtn">＋ New workflow</button></div>
+        <div class="workflow-grid" id="workflowGrid"></div>
+      </section>
+
+      <section class="page-section" id="landing" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">PUBLISH</p><h1>Landing pages</h1><p class="muted">Simple campaign landing page drafts.</p></div><button class="primary-btn" id="newLandingBtn">＋ Create page</button></div>
+        <div class="template-grid" id="landingGrid"></div>
+      </section>
+
+      <section class="page-section" id="reports" hidden>
+        <div class="section-title-row"><div><p class="eyebrow">EXPORTS</p><h1>Reports</h1><p class="muted">Download a snapshot of your marketing activity.</p></div></div>
+        <div class="report-card panel"><div class="report-icon">▣</div><div><h2>Campaign performance report</h2><p class="muted">Export campaign status and engagement metrics as a CSV spreadsheet.</p></div><button class="primary-btn" id="downloadReport">Download CSV ↓</button></div>
+        <div class="report-card panel"><div class="report-icon">♙</div><div><h2>Subscriber report</h2><p class="muted">Export your subscriber list and subscription statuses.</p></div><button class="secondary-btn" id="downloadSubscriberReport">Download CSV ↓</button></div>
+        <p class="note">This internship project is a frontend-only demonstration. Email sending, analytics and conversions are simulated.</p>
+      </section>
+      <footer class="footer">© 2026 Market Auto <span>Made for smarter marketing.</span></footer>
+    </main>
+  </div>
+
+  <dialog id="campaignDialog" class="modal">
+    <form id="campaignForm" class="modal-card">
+      <div class="modal-heading"><div><p class="eyebrow">CAMPAIGN DETAILS</p><h2 id="campaignDialogTitle">Create campaign</h2></div><button type="button" class="close-btn" data-close-dialog aria-label="Close">×</button></div>
+      <input type="hidden" id="campaignId">
+      <label>Campaign name<input id="campaignName" required maxlength="70" placeholder="e.g. Summer product launch"></label>
+      <div class="form-two"><label>Campaign type<select id="campaignType"><option>Email Campaign</option><option>Promotional</option><option>Newsletter</option><option>Product Update</option></select></label><label>Status<select id="campaignStatus"><option>Draft</option><option>Scheduled</option><option>In Progress</option><option>Completed</option><option>Cancelled</option></select></label></div>
+      <label>Audience<select id="campaignAudience"><option>All Subscribers</option><option>Engaged Subscribers</option><option>New Subscribers</option><option>Inactive Subscribers</option></select></label>
+      <label>Scheduled / sent date<input id="campaignDate" type="date"></label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close-dialog>Cancel</button><button class="primary-btn" type="submit">Save campaign</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="simpleDialog" class="modal">
+    <form id="simpleForm" class="modal-card">
+      <div class="modal-heading"><div><p class="eyebrow" id="simpleEyebrow">DETAILS</p><h2 id="simpleTitle">Add item</h2></div><button type="button" class="close-btn" data-close-dialog aria-label="Close">×</button></div>
+      <div id="simpleFields"></div>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close-dialog>Cancel</button><button class="primary-btn" type="submit">Save</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
